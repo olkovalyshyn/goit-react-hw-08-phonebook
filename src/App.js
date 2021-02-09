@@ -38,7 +38,7 @@ function App() {
       {/* <h1>Phonebook</h1>
       <ContactForm />
 
-      <h3>Find contacts by name</h3>
+      <h3>Find contacts   by name</h3>
       <Filter />
 
       <h2>Contacts</h2>
