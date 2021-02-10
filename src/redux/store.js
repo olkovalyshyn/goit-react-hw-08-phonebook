@@ -16,9 +16,11 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { contactsReducer } from "./reducers";
+import { contactsReducer } from "./contacts/contacts-reducers";
+import authReducer from "../redux/auth/auth-slice";
 
-import selectors from "./contacts-selectors";
+import selectors from "./contacts/contacts-selectors";
+
 // console.log("!!!getVisibleContacts", selectors.getVisibleContacts());
 // import server from "../../db.json";
 
@@ -64,6 +66,7 @@ const middleware = [
 const store = configureStore({
   reducer: {
     contacts: contactsReducer,
+    auth: authReducer,
   },
   middleware: middleware,
   devTools: process.env.NODE_ENV === "development",

@@ -2,7 +2,7 @@ import { createAction } from "@reduxjs/toolkit";
 import shortid from "shortid";
 import axios from "axios";
 
-import { fetchAddNewContact } from "./Api";
+import { fetchAddNewContact } from "../Api";
 
 import {
   getContactsRequest,
@@ -14,7 +14,7 @@ import {
   deleteContactRequest,
   deleteContactSuccess,
   deleteContactError,
-} from "./actions";
+} from "./contacts-actions";
 
 axios.defaults.baseURL = "http://localhost:4040";
 

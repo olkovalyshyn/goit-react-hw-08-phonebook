@@ -1,9 +1,8 @@
 import { createSelector } from "@reduxjs/toolkit";
 
 const getContactsItem = (state) => state.contacts.item;
-
 const getFilter = (state) => state.contacts.filter;
-
+// const getIsLoggedIn = (state) => state.contacts.loading;
 const getVisibleContacts = createSelector(
   [getContactsItem, getFilter],
   (contacts, filter) => {
@@ -14,4 +13,9 @@ const getVisibleContacts = createSelector(
   }
 );
 
-export default { getContactsItem, getFilter, getVisibleContacts };
+export default {
+  getContactsItem,
+  getFilter,
+  getVisibleContacts,
+  // getIsLoggedIn,
+};

@@ -1,9 +1,5 @@
 import { Switch, Route } from "react-router-dom";
 
-import ContactForm from "./components/ContactForm";
-import ContactList from "./components/ContactList";
-import Filter from "./components/Filter";
-import AuthNav from "./components/AuthNav";
 import AppBar from "./components/AppBar";
 import HomeView from "./views/HomeView";
 import ContactsView from "./views/ContactsView";
@@ -34,15 +30,6 @@ function App() {
           <LoginView />
         </Route>
       </Switch>
-
-      {/* <h1>Phonebook</h1>
-      <ContactForm />
-
-      <h3>Find contacts   by name</h3>
-      <Filter />
-
-      <h2>Contacts</h2>
-      <ContactList /> */}
     </>
   );
 }

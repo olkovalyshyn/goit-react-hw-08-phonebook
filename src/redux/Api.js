@@ -1,6 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:4040";
+// axios.defaults.baseURL = "http://localhost:4040";
 
 // export const fetchAddNewContact = async (contact) => {
 //   console.log(contact);

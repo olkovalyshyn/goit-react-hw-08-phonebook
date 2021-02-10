@@ -12,7 +12,7 @@ import {
   deleteContactError,
   deleteContactSuccess,
   filterContact,
-} from "./actions";
+} from "./contacts-actions";
 
 const contacts = {
   items: [],
@@ -31,12 +31,7 @@ const filterReducer = createReducer("", {
   [filterContact]: (_, { payload }) => payload,
 });
 
-export const contactsReducer = combineReducers({
-  item: itemReducer,
-  filter: filterReducer,
-});
-
-export const loading = createReducer(false, {
+export const loadingReducer = createReducer(false, {
   [getContactsRequest]: () => true,
   [getContactsSuccess]: () => false,
   [getContactsError]: () => false,
@@ -48,4 +43,10 @@ export const loading = createReducer(false, {
   [deleteContactRequest]: () => true,
   [deleteContactSuccess]: () => false,
   [deleteContactError]: () => false,
+});
+
+export const contactsReducer = combineReducers({
+  item: itemReducer,
+  filter: filterReducer,
+  loading: loadingReducer,
 });
