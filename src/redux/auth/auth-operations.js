@@ -16,11 +16,20 @@ export const register = createAsyncThunk(
   }
 );
 
-export const logIn = createAsyncThunk("auth/login", async (credentials) => {
+const logIn = createAsyncThunk("auth/login", async (credentials) => {
   try {
     const { data } = await axios.post("/users/login", credentials);
     //   token.set(data.token)
-    return { data };
+    return data;
+  } catch (error) {
+    //Добавить обработку ошибки error.message
+  }
+});
+
+export const logOut = createAsyncThunk("auth/logout", async () => {
+  try {
+    await axios.post("/users/logout");
+    // token.unset();
   } catch (error) {
     //Добавить обработку ошибки error.message
   }
@@ -29,5 +38,6 @@ export const logIn = createAsyncThunk("auth/login", async (credentials) => {
 const authOperations = {
   register,
   logIn,
+  logOut,
 };
 export default authOperations;

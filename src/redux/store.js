@@ -72,6 +72,8 @@ const store = configureStore({
   devTools: process.env.NODE_ENV === "development",
 });
 
+console.log("!!!STORE.state", store.getState());
+
 // const persistor = persistStore(store);
 
 export default store;
