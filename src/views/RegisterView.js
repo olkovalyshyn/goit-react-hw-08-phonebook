@@ -45,10 +45,10 @@ export default function RegisterView() {
     <div>
       <h1>Сторінка реєстрації</h1>
 
-      <form style={styles.form} onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={styles.form}>
         <label style={styles.label}>
           Ім'я
-          <input type="name" name="name" value={name} onChange={handleChange} />
+          <input type="text" name="name" value={name} onChange={handleChange} />
         </label>
 
         <label style={styles.label}>

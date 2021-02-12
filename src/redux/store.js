@@ -59,21 +59,28 @@ const middleware = [
   logger,
 ];
 
+const authPersistConfig = {
+  key: "auth",
+  storage,
+  whitelist: ["token"],
+};
+
 // const rootRedusers = combineReducers({
 //   contacts: persistReducer(persistConfig, contactsReducer),
 // });
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     contacts: contactsReducer,
-    auth: authReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
+    // auth: authReducer,
   },
   middleware: middleware,
   devTools: process.env.NODE_ENV === "development",
 });
 
-console.log("!!!STORE.state", store.getState());
+// console.log("!!!STORE.state", store.getState());
 
-// const persistor = persistStore(store);
+export const persistor = persistStore(store);
 
-export default store;
+// export default store;

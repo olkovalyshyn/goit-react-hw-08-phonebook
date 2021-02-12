@@ -13,16 +13,16 @@ const authSlice = createSlice({
   extraReducers: {
     [authOperations.register.fulfilled](state, action) {
       // console.log("!!!state in auth-slice", state);
-      // console.log("!!!action in auth-slice", action);
+      console.log("!!!action register in auth-slice", action);
 
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
     [authOperations.logIn.fulfilled](state, action) {
-      console.log("!!!state in auth-slice", state);
-      console.log("!!!action in auth-slice", action);
-
+      // console.log("!!!state in auth-slice", state);
+      // console.log("!!!state.auth in auth-slice", state.auth);
+      // console.log("!!!action login in auth-slice", action);
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
@@ -32,6 +32,11 @@ const authSlice = createSlice({
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
+    },
+
+    [authOperations.fetchCurrentUser.fulfilled](state, action) {
+      state.user = action.payload;
+      state.isLoggedIn = true;
     },
   },
 });

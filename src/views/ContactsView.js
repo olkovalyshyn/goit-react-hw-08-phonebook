@@ -7,14 +7,14 @@ export default function ContactsView() {
     <>
       <h2>Контакти</h2>
 
-      {/* <h3>Phonebook</h3>
+      <h3>Phonebook</h3>
       <ContactForm />
 
       <h3>Find contacts by name</h3>
       <Filter />
 
       <h2>Contacts</h2>
-      <ContactList /> */}
+      <ContactList />
     </>
   );
 }
